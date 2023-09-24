@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="DanhSachQuanLyNhomQuangCaoLoadControl.ascx.cs" Inherits="cms_admin_QuangCao_QuanLyNhomQuangCao_DanhSachQuanLyNhomQuangCaoLoadControl" %>
+Đây là danh sách quản lý nhóm quảng cáo
