@@ -28,7 +28,7 @@
                     "MaDM": MaDM
                 },
                 function (data, status) {
-                    //alert("Data: " + data + "\nStatus: " + status);
+                    //alert("Data: " + data + "\nStatus: " + status) ;
                     if (data = 1)   // thực hiện thành công --> ẩn dòng đã xóa đi.
                     {
                         $("#maDong_" + MaDM).slideUp();
