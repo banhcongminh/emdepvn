@@ -4,7 +4,7 @@
     Thêm mới, chỉnh sửa sản phẩm
 </div>
 <div class="FormthemMoi">
-    
+    <asp:Literal ID="ltrThongBao" runat="server"></asp:Literal>
     <div class ="thongTin">
         <div class="tenTruong">Chọn danh mục</div>
         <div class="oNhap"><asp:DropDownList ID="ddlDanhMucCha" runat="server"></asp:DropDownList></div>
@@ -18,10 +18,16 @@
             </asp:RequiredFieldValidator>
         </div>
     </div>
-    <div class ="thongTin">
-        <div class="tenTruong">Ảnh đại diện</div>
-        <div class="oNhap"><asp:FileUpload ID="flAnhDaiDien" runat="server" /></div>
-    </div> 
+    <div class="thongTin">
+        <div class="tenTruong">Ảnh Đại Diện</div>
+        <div class="oNhap">
+            <div>
+                <asp:HiddenField ID="hdTenAnhDaiDienCu" runat="server" />
+                <asp:Literal ID="ltrAnhDaiDien" runat="server"></asp:Literal>
+            </div>
+            <asp:FileUpload ID="flAnhDaiDien" runat="server" />
+        </div>
+    </div>
     <div class ="thongTin">
         <div class="tenTruong">Số lượng</div>
         <div class="oNhap"><asp:TextBox ID="tbSoLuong" runat="server"></asp:TextBox>
@@ -67,7 +73,7 @@
     <div class ="thongTin">
         <div class="tenTruong">Mô tả sản phẩm</div>
         <div class="oNhap">
-            <asp:TextBox ID="tbMoTa" runat="server"></asp:TextBox>            
+            <asp:TextBox ID="tbMoTa" runat="server" TextMode="MultiLine" Height="150px"></asp:TextBox>            
         </div>
     </div>
     <div class ="thongTin">

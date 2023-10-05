@@ -47,7 +47,8 @@ a:hover{color:#f75d75}
 .oNhap{float:left;width:calc(100% - 150px)}
 
 .FormthemMoi input[type=text],
-.FormthemMoi select{border:solid 1px #dfdfdf;padding:5px;width:50%}
+.FormthemMoi select,
+.FormthemMoi textarea{border:solid 1px #dfdfdf;padding:5px;width:50%}
 .FormthemMoi .btThemMoi,
 .FormthemMoi .btHuy{border: 0;background:#F75D75;cursor:pointer;padding: 8px 20px; color:#fff0f5;font-weight:bold}
 .FormthemMoi .btHuy{background:#bbb;margin-left:10px}
