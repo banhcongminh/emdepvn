@@ -8,24 +8,66 @@ using System.Web.UI.WebControls;
 
 public partial class cms_admin_SanPham_QuanLyDanhMuc_DanhSach_ThemMoi : System.Web.UI.UserControl
 {
+    private string thaotac = "";
+    private string id = "";//lấy id của danh mục cần chỉnh sửa
     protected void Page_Load(object sender, EventArgs e)
     {      
         if(!IsPostBack)
         {
             LayDanhMucCha();
+            HienThiThongTin(id);
         }
+    }
+    private void HienThiThongTin(string id)
+    {
+        if (thaotac == "ChinhSua")
+        {
+            btThemMoi.Text = "Chỉnh Sửa";
+            cbThemNhieuDanhMuc.Visible = false;
+
+            DataTable dt = new DataTable();
+            dt = emdepvn.DanhMuc.Thongtin_Danhmuc_by_id(id);
+            if (dt.Rows.Count > 0)
+            {
+                ddlDanhMucCha.SelectedValue = dt.Rows[0]["MaDMCha"].ToString();
+                tbTenDanhMuc.Text = dt.Rows[0]["TenDM"].ToString();
+                tbThuTu.Text = dt.Rows[0]["ThuTu"].ToString();
+
+                ltrAnhDaiDien.Text = "<img class='anhDaiDien'src='/pic/SanPham/" + dt.Rows[0]["AnhDaiDien"] + @"'/>";
+                hdTenAnhDaiDienCu.Value = dt.Rows[0]["AnhDaiDien"].ToString();
+            }
+        }
+
+        else
+        {
+            btThemMoi.Text = "Thêm Mới";
+            cbThemNhieuDanhMuc.Visible = true;
+        }
+
     }
 
     private void LayDanhMucCha()
     {
         DataTable dt = new DataTable();
-        dt = emdepvn.DanhMuc.Thongtin_Danhmuc();
+        dt = emdepvn.DanhMuc.Thongtin_Danhmuc_by_MaDMCha("0");
         ddlDanhMucCha.Items.Clear();
         ddlDanhMucCha.Items.Add(new ListItem("Danh mục gốc", "0"));
         
         for (int i = 0; i < dt.Rows.Count; i++)
         {
             ddlDanhMucCha.Items.Add(new ListItem(dt.Rows[i]["TenDM"].ToString(), dt.Rows[i]["MaDM"].ToString()));
+            layDanhMucCon(dt.Rows[i]["MaDM"].ToString(),"___");
+        }
+    }
+
+    private void layDanhMucCon(string MaDMCha, string khoangcach)
+    {
+        DataTable dt= new DataTable();
+        dt = emdepvn.DanhMuc.Thongtin_Danhmuc_by_MaDMCha(MaDMCha);
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            ddlDanhMucCha.Items.Add(new ListItem(khoangcach +dt.Rows[i]["TenDM"].ToString(), dt.Rows[i]["MaDM"].ToString()));
+            layDanhMucCon(dt.Rows[i]["MaDM"].ToString(), khoangcach + "___");
         }
     }
 

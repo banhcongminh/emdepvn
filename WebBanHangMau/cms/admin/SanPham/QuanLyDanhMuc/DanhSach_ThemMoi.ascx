@@ -20,7 +20,13 @@
     </div>
     <div class ="thongTin">
         <div class="tenTruong">Ảnh đại diện</div>
-        <div class="oNhap"><asp:FileUpload ID="flAnhDaiDien" runat="server" /></div>
+        <div class="oNhap">
+            <div>
+                <asp:HiddenField ID="hdTenAnhDaiDienCu" runat="server" />
+                <asp:Literal ID="ltrAnhDaiDien" runat="server"></asp:Literal>
+            </div>
+            <asp:FileUpload ID="flAnhDaiDien" runat="server" />
+        </div>
     </div> 
     <div class ="thongTin">
         <div class="tenTruong">Thứ tự</div>
