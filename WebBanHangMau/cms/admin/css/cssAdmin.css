@@ -70,3 +70,13 @@ table.tbDanhMuc .cotAnh {position:relative;z-index:1}
 table.tbDanhMuc .cotAnh .anhDaiDien{max-width:40px;max-height:auto}
 table.tbDanhMuc .cotAnh .anhDaiDienHover{max-width:200px; max-height:200px;display:none;position:absolute;z-index:1;top:0;right:80px}
 table.tbDanhMuc .cotAnh:hover .anhDaiDienHover{display:inline-block }
+
+
+table.tbDanhMuc .cotAnh {position:relative;z-index:1}
+table.tbDanhMuc .cotSoLuong {position:relative;z-index:1}
+table.tbDanhMuc .cotDonGia {position:relative;z-index:1}
+table.tbDanhMuc .cotNgayTao {position:relative;z-index:1}
+table.tbDanhMuc .cotCongCu {position:relative;z-index:1}
+
+
+

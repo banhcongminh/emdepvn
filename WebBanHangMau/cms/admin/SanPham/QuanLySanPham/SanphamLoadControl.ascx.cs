@@ -16,11 +16,12 @@ public partial class cms_admin_SanPham_QuanLySanPham_SanphamLoadControl : System
         }
         switch (thaotac)
         {
+            case "ChinhSua":
             case "ThemMoi":
                 plLoadControl.Controls.Add(LoadControl("SanPham_ThemMoi.ascx"));
                 break;
-            case "ChinhSua":
-                plLoadControl.Controls.Add(LoadControl("SanPham_ChinhSua.ascx"));
+            default:
+                plLoadControl.Controls.Add(LoadControl("SanPham_HienThi.ascx"));
                 break;
 
         }

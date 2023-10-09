@@ -85,7 +85,7 @@
         <div class="tenTruong">&nbsp;</div>
         <div class="oNhap">
             <asp:Button ID="btThemMoi" runat="server" Text="Thêm mới" CssClass="btThemMoi" OnClick="btThemMoi_Click" />
-            <asp:Button ID="Huy" runat="server" Text="Hủy" CssClass="btHuy" OnClick="Huy_Click" CausesValidation="false" />
+            <asp:Button ID="Huy" runat="server" Text="Hủy" CssClass="btHuy" OnClick="btHuy_Click" CausesValidation="false" />
         </div>
     </div>
 </div>
